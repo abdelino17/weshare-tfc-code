@@ -21,3 +21,13 @@ resource "random_integer" "specie" {
 
   keepers = local.choices
 }
+
+terraform {
+  backend "remote" {
+    organization = "wescalefr"
+
+    workspaces {
+      name = "abdel-tfc-code"
+    }
+  }
+}
